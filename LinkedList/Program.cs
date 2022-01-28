@@ -7,8 +7,12 @@ namespace LinkedList
         static void Main(string[] args)
         {
 
-
-            Console.WriteLine("Linked list");
+            LinkedList listObj=new LinkedList();
+            listObj.AddLast(56);
+            listObj.AddLast(30);
+            listObj.AddLast(70);
+            listObj.Display();
+            listObj.Display();
         }
     }
 }
