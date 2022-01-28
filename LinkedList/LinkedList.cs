@@ -7,32 +7,21 @@ namespace LinkedList
     internal class LinkedList
     {
         public Node head;
-        //----- creating method for a class--------//
-        public void AddLast(int new_data) 
+             //---------------------------- creating method for a class----------------------------//
+        public void AddFront(int new_data)
         {
-            //---- Creating a object for Node.class------//
-            Node new_node = new Node(new_data); 
-            if (this.head == null)
-            {
-                this.head=new_node;
-            }
-            else
-            {
-                Node lastNode = GetLastNode();
-                lastNode.next=new_node;
-            }
+            //-------------- Creating a object for class-------------------------------------------//
+            Node new_node = new Node(new_data);
+
+            //----- when we want to add any node at the front , we want the head to point to it----//
+            new_node.next=this.head;
+
+            //----- the previous head node is now the second node of linked list-------------------//
+            this.head=new_node;
+
             Console.WriteLine("inserted into list" +" " + new_node.data);
         }
-        public Node GetLastNode()
-        {
-            Node temp = this.head;
-            while (temp.next != null)
-            {
-                temp=temp.next;
-            }
-            return temp;
-        }
-        //------Creating the DisplayMethod-----//
+            //-------Display Method is used to display Elements-----------//
         public void Display()
         {
             Console.WriteLine("Displaying Names");
@@ -46,12 +35,10 @@ namespace LinkedList
             {
                 while (temp != null)
                 {
-                    Console.Write(temp.data);
+                    Console.WriteLine(temp.data);
                     temp = temp.next;
                 }
             }
         }
     }
 }
-    
-
