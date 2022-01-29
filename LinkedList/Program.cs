@@ -8,9 +8,9 @@ namespace LinkedList
         {
 
             LinkedList listObj=new LinkedList();
-            listObj.AddFront(70);
-            listObj.AddFront(30);
-            listObj.AddFront(56);
+            listObj.AddLast(56);
+            listObj.AddLast(70);
+            listObj.InsertAtPosition(2, 30);
             listObj.Display();
         }
     }
