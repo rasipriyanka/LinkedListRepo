@@ -5,12 +5,12 @@ using System.Text;
 //---------------Namespace----------------------------//
 namespace LinkedList
 {
-     class LinkedList
+    class LinkedList
     {
         public Node head;
         public void AddLast(int new_data) // creating method for a class
         {
-            Node new_node = new Node(new_data); // Creating a object for Node.class
+            Node new_node = new Node(new_data); // Creting a object for Node.class
             if (this.head == null)
             {
                 this.head = new_node; //assigning the elemnts to the head
@@ -49,19 +49,36 @@ namespace LinkedList
                 }
             }
         }
-        public int search(int value)  //this method is used for finding the value
+        public void AddPosition(int position, int new_data) //this method is used for adding the valuein particular position
         {
             Node temp = this.head;
-            while (temp != null)
+            if (position < 1)
             {
-                if (temp.data == value)
-                {
-                    return value;
-                }
-                temp = temp.next;
+                Console.WriteLine("Invalid Position");
             }
-            Console.WriteLine("{0} is not present", value);
-            return 0;
+            if (position == 1)
+            {
+                Node new_node = new Node(new_data);
+                new_node.next = this.head;
+                this.head = new_node;
+            }
+            else
+            {
+                while (position--!= 0)
+                {
+                    if (position == 1)
+                    {
+                        Node new_node = new Node(new_data);
+                        new_node.next = temp.next;
+                        temp.next = new_node;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (position != 1)
+                    Console.WriteLine("Position out of range");
+            }
+            Console.WriteLine("Inserted Value is " + temp.next.data);
         }
     }
 }
