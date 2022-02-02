@@ -9,8 +9,12 @@ namespace LinkedList
 
             LinkedList listObj=new LinkedList();
             listObj.AddLast(56);
+            listObj.AddLast(30);
             listObj.AddLast(70);
-            listObj.InsertAtPosition(2, 30);
+            Console.WriteLine("Before deleting");
+            listObj.Display();
+            listObj.DeleteFirstNode();
+            Console.WriteLine("After deleting");
             listObj.Display();
         }
     }

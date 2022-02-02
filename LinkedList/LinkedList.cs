@@ -10,10 +10,10 @@ namespace LinkedList
         public Node head;
         public void AddLast(int new_data) // creating method for a class
         {
-            Node new_node = new Node(new_data); // Creating a object for Node.class
+            Node new_node = new Node(new_data); // Creting a object for Node.class
             if (this.head == null)
             {
-                this.head = new_node; //assigning the elements to the head
+                this.head = new_node; //assigning the elemnts to the head
             }
             else
             {
@@ -31,8 +31,7 @@ namespace LinkedList
             }
             return temp;
         }
-        //this method is for displaying the elements in linked list
-        public void Display()
+        public void Display()//this method is for displaying the elements in linked list
         {
             Console.WriteLine("Displaying Names");
             Node temp = this.head;
@@ -50,36 +49,15 @@ namespace LinkedList
                 }
             }
         }
-        //this method is used for adding the valuein particular position
-        public void InsertAtPosition(int position, int new_data) 
+        public int DeleteFirstNode()  //this methos is used for deleting the firstnode
         {
-            if (position < 1)
+            if (this.head== null)
             {
-                Console.WriteLine("Invalid Position");
+                return 0;
             }
-            if (position == 1)
-            {
-                Node new_node = new Node(new_data);
-                new_node.next= this.head;
-                this.head = new_node;
-            }
-            else
-            {
-                while (position-- != 0)
-                {
-                    if (position == 1)
-                    {
-                        Node new_node = new Node(new_data);
-                        new_node.next = this.head.next;
-                        this.head.next = new_node;
-                        break;
-                    }
-                    this.head=this.head.next;
-                }
-                if (position != 1)
-                    Console.WriteLine("Position out of range");
-            }
-            Console.WriteLine("Inserted Value is " + head.next.data);
+            int deleteNode = this.head.data;
+            this.head = this.head.next;
+            return deleteNode;
         }
     }
-}
+    }
