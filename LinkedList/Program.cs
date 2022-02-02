@@ -13,7 +13,7 @@ namespace LinkedList
             listObj.AddLast(70);
             Console.WriteLine("Before deleting");
             listObj.Display();
-            listObj.DeleteFirstNode();
+            listObj.DeleteLastNode();
             Console.WriteLine("After deleting");
             listObj.Display();
         }
