@@ -12,7 +12,7 @@ namespace LinkedList
             listObj.AddLast(30);
             listObj.AddLast(70);
             listObj.Display();
-            listObj.deleteNode(40);
+            listObj.SortAscending();
             listObj.Display();
            
         }
