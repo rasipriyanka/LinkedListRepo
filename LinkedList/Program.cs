@@ -12,9 +12,9 @@ namespace LinkedList
             listObj.AddLast(30);
             listObj.AddLast(70);
             listObj.Display();
-            listObj.AddPosition(3, 40);
+            listObj.deleteNode(40);
             listObj.Display();
-            listObj.Display();
+           
         }
     }
 }
