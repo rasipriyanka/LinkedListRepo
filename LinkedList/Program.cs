@@ -11,11 +11,18 @@ namespace LinkedList
             listObj.AddLast(56);
             listObj.AddLast(30);
             listObj.AddLast(70);
-            Console.WriteLine("Before deleting");
             listObj.Display();
-            listObj.DeleteLastNode();
-            Console.WriteLine("After deleting");
-            listObj.Display();
+            int res = listObj.search(30);
+            if (res == 0)
+            {
+                Console.WriteLine("{0} is not present", res);
+            }
+            else
+            {
+                Console.WriteLine("{0} is present", res);
+            }
+
         }
     }
-}
+    }
+

@@ -5,12 +5,12 @@ using System.Text;
 //---------------Namespace----------------------------//
 namespace LinkedList
 {
-    internal class LinkedList
+     class LinkedList
     {
         public Node head;
         public void AddLast(int new_data) // creating method for a class
         {
-            Node new_node = new Node(new_data); // Creting a object for Node.class
+            Node new_node = new Node(new_data); // Creating a object for Node.class
             if (this.head == null)
             {
                 this.head = new_node; //assigning the elemnts to the head
@@ -49,25 +49,19 @@ namespace LinkedList
                 }
             }
         }
-        public int DeleteLastNode()  //this methos is used for deleting the firstnode
+        public int search(int value)  //this method is used for finding the value
         {
-            Node newNode = this.head;
-            if (this.head== null)
+            Node temp = this.head;
+            while (temp != null)
             {
-                return 0;
+                if (temp.data == value)
+                {
+                    return value;
+                }
+                temp = temp.next;
             }
-            if (this.head.next == null)
-            {
-                this.head = null;
-                return 0;
-            }
-            while (newNode.next.next != null)
-            {
-                newNode = newNode.next;
-            }
-            int lastDeleteNode = newNode.next.data;
-            newNode.next=null;
-            return lastDeleteNode;
+            Console.WriteLine("{0} is not present", value);
+            return 0;
         }
     }
 }
